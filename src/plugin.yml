@@ -1,0 +1,10 @@
+name: JavaScriptAPI
+version: 1.0
+author: Totom3
+description: A plugin that allows JS scripting in Minecraft.
+main: io.github.totom3.scripts.ScriptsMain
+
+commands:
+    scripts:
+        description: Command for (un)loading and executing scripts.
+        usage: /scripts help
