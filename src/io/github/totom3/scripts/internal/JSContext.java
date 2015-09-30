@@ -42,12 +42,13 @@ public class JSContext implements ScriptContext {
 	    throw new NullPointerException("world cannot be null in non-testing mode");
 	}
 
-	localBindings = new LocalScriptBindings(this);
-	globalBindings = GlobalScriptBindings.get();
+	world = w;
+	script = jScript;
 	writer = new PrintWriter(System.out, true);
 	errWriter = new PrintWriter(System.err, true);
-	script = jScript;
-	world = w;
+	
+	localBindings = new LocalScriptBindings(this);
+	globalBindings = GlobalScriptBindings.get();
     }
 
     public World getWorld() {
@@ -63,8 +64,6 @@ public class JSContext implements ScriptContext {
 	ScriptsScheduler.get().unregisterAll(this);
 	localBindings.clear();
 	world = null;
-
-	System.out.println("Destroying JSContext!");
 
 	if (JSEngine.isExecuting() && this == JSEngine.getContext()) {
 	    throw new ExitScriptException(ExitScriptException.CURRENT);

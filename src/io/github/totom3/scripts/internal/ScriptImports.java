@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 
 /**
  *
@@ -67,11 +68,12 @@ public class ScriptImports {
 
     public static void initPackages() {
 	Set<String> set = new HashSet<>(16);
-
+	
 	set.add("org.bukkit");
 	set.add("org.bukkit.block");
 	set.add("org.bukkit.entity");
 	set.add("org.bukkit.inventory");
+	set.add("org.bukkit.enchantments");
 	set.add("org.bukkit.metadata");
 	set.add("org.bukkit.scoreboard");
 	set.add("org.bukkit.util");

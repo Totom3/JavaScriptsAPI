@@ -33,7 +33,7 @@ public class ScriptsCommand extends BaseCommandExecutor {
     private final ScriptsCache cache;
 
     ScriptsCommand(ScriptsMain main) {
-	super("scripts2");
+	super("scripts");
 	this.main = main;
 	this.cache = main.getCache();
     }

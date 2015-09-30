@@ -27,12 +27,12 @@ public class ScriptsCache extends DataCache<String, Script> {
     protected LoadingCache<String, Script> makeCache() {
 	return CacheBuilder.<String, Script>newBuilder()
 		.softValues()
-		.build(new NewScriptsLoader());
+		.build(new ScriptsLoader());
     }
 
-    static class NewScriptsLoader extends CacheLoader<String, Script> {
+    static class ScriptsLoader extends CacheLoader<String, Script> {
 
-	NewScriptsLoader() {
+	ScriptsLoader() {
 	}
 
 	@Override
